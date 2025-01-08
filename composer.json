@@ -1,0 +1,23 @@
+{
+    "name": "tyrellsys/itemmanager",
+    "description": "CakePHP plugin to enable CRUD operations for records",
+    "require": {
+        "cakephp/cakephp": "4.5",
+        "cakephp/migrations": "^4.5",
+        "cakephp/datasource": "^5.1",
+        "cakephp/database": "^5.1",
+        "cakephp/core": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tyrellsys\\Itemmanager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MattTyrell",
+            "email": "matthew@tyrellsys.com.my"
+        }
+    ],
+    "minimum-stability": "stable"
+}
