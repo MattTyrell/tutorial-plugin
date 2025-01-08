@@ -50,6 +50,11 @@ class ComposerStaticInit77e5d74ac5ed0e27b2d02fa7354bc182
     );
 
     public static $prefixLengthsPsr4 = array (
+        'U' => 
+        array (
+            'User\\Test\\' => 10,
+            'User\\' => 5,
+        ),
         'T' => 
         array (
             'Twig\\Extra\\Markdown\\' => 20,
@@ -148,6 +153,14 @@ class ComposerStaticInit77e5d74ac5ed0e27b2d02fa7354bc182
     );
 
     public static $prefixDirsPsr4 = array (
+        'User\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/User/tests',
+        ),
+        'User\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/plugins/User/src',
+        ),
         'Twig\\Extra\\Markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/markdown-extra',
@@ -247,8 +260,8 @@ class ComposerStaticInit77e5d74ac5ed0e27b2d02fa7354bc182
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
