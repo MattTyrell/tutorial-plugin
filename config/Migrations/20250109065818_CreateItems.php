@@ -75,7 +75,16 @@ class CreateItems extends AbstractMigration
                 'default' => null,
                 'limit' => null,
                 'null' => false,
-            ]);
+            ])
+            ->addIndex(
+                [
+                    'category_id'
+                ],
+                [
+                    'name' => 'category_id',
+                    'unique' => false,
+                ]
+            );
 
         $table->create();
     }
