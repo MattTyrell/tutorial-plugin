@@ -1,0 +1,31 @@
+{
+    "name": "matthewtan/itemmanager",
+    "description": "A CakePHP plugin to perform CRUD operations.",
+    "type": "cakephp-plugin",
+    "require": {
+        "cakephp/cakephp": "4.4.*",
+        "cakephp/migrations": "3.2"
+    },
+    "require-dev": {
+        "cakephp/cakephp-codesniffer": "4.5",
+        "cakephp/bake": "^2.9",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Matthewtan\\Itemmanager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MattTyrell",
+            "email": "matthew@tyrellsys.com.my"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
