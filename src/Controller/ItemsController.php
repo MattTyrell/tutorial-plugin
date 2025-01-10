@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace ItemManager\Controller;
 
-use App\Controller\AppController;
+use Cake\Controller\Controller;
 
 /**
  * Items Controller
