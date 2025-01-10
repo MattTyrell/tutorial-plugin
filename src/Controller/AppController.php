@@ -1,11 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Matthewtan\Itemmanager\Controller;
+namespace ItemManager\Controller;
 
-use Cake\Controller\Controller;
+use App\Controller\AppController as BaseController;
 
-class AppController extends Controller
+class AppController extends BaseController
 {
-
 }
