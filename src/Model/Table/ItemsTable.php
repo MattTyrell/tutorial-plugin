@@ -46,6 +46,7 @@ class ItemsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Muffin/Trash.Trash');
 
         $this->belongsTo('Categories', [
             'foreignKey' => 'category_id',
