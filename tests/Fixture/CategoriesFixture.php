@@ -10,6 +10,8 @@ use Cake\TestSuite\Fixture\TestFixture;
  */
 class CategoriesFixture extends TestFixture
 {
+    public $import = ['table' => 'categories'];
+
     /**
      * Init method
      *
@@ -20,8 +22,8 @@ class CategoriesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'name' => 'Lorem ipsum dolor sit amet',
-                'deleted' => '2025-01-10 03:05:32',
+                'name' => 'Category 1',
+                'deleted' => null,
                 'created' => '2025-01-10 03:05:32',
                 'modified' => '2025-01-10 03:05:32',
             ],
