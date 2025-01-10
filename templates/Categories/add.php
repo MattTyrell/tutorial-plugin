@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $category
+ * @var \ItemManager\Model\Entity\Category $category
  */
 ?>
 <div class="row">
@@ -18,7 +18,6 @@
                 <legend><?= __('Add Category') ?></legend>
                 <?php
                     echo $this->Form->control('name');
-                    echo $this->Form->control('deleted', ['empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

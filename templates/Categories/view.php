@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $category
+ * @var \ItemManager\Model\Entity\Category $category
  */
 ?>
 <div class="row">
@@ -25,10 +25,6 @@
                 <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($category->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Deleted') ?></th>
-                    <td><?= h($category->deleted) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>
