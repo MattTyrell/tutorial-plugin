@@ -63,7 +63,7 @@ class ItemsTableTest extends TestCase
      */
     public function testValidationDefault(array $data, array $expected): void
     {
-        $validator = $this->Items->getValidator('default');
+        $validator = $this->Items->getValidator();
         $result = $validator->validate($data);
         $this->assertEquals($expected, $result);
     }

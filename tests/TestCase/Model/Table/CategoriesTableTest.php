@@ -55,11 +55,43 @@ class CategoriesTableTest extends TestCase
     /**
      * Test validationDefault method
      *
+     * @dataProvider dataProviderValidationDefault
+     * @param array $data The data to be validated
+     * @param array $expected The expected validation errors
      * @return void
      * @uses \ItemManager\Model\Table\CategoriesTable::validationDefault()
      */
-    public function testValidationDefault(): void
+    public function testValidationDefault(array $data, array $expected): void
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $validator = $this->Categories->getValidator();
+        $result = $validator->validate($data);
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     *  Data provider for validationDefault test
+     *
+     * @return array
+     */
+    public function dataProviderValidationDefault(): array
+    {
+        return [
+            [
+                'data' => [
+                    'name' => 'Testing Category',
+                ],
+                'expected' => [],
+            ],
+            [
+                'data' => [
+                    'name' => '',
+                ],
+                'expected' => [
+                    'name' => [
+                        '_empty' => 'This field cannot be left empty',
+                    ],
+                ],
+            ],
+        ];
     }
 }
