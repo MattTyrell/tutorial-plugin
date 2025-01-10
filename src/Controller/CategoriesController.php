@@ -8,6 +8,7 @@ use App\Controller\AppController;
 /**
  * Categories Controller
  *
+ * @property \ItemManager\Model\Table\CategoriesTable $Categories
  * @method \ItemManager\Model\Entity\Category[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class CategoriesController extends AppController

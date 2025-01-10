@@ -8,6 +8,7 @@ use Cake\Controller\Controller;
 /**
  * Items Controller
  *
+ * @property \ItemManager\Model\Table\ItemsTable $Items
  * @method \ItemManager\Model\Entity\Item[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ItemsController extends AppController
