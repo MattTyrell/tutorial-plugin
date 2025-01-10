@@ -40,11 +40,11 @@ class CategoriesControllerTest extends TestCase
      * Test index method
      *
      * @return void
-     * @uses \ItemManager\Controller\ItemsController::index()
+     * @uses \ItemManager\Controller\CategoriesController::index()
      */
     public function testIndex(): void
     {
-        $this->get('items/');
+        $this->get('categories/');
         $this->assertResponseOk();
     }
 
@@ -52,11 +52,11 @@ class CategoriesControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \ItemManager\Controller\ItemsController::view()
+     * @uses \ItemManager\Controller\CategoriesController::view()
      */
     public function testView(): void
     {
-        $this->get('items/view/1');
+        $this->get('categories/view/1');
         $this->assertResponseOk();
     }
 
@@ -64,14 +64,14 @@ class CategoriesControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \ItemManager\Controller\ItemsController::add()
+     * @uses \ItemManager\Controller\CategoriesController::add()
      */
     public function testAdd(): void
     {
         $count = $this->Categories->find()->all()-count();
-        $this->get('items/add');
+        $this->get('categories/add');
         $this->assertResponseOk();
-        $this->post('items/add', [
+        $this->post('categories/add', [
             'name' => 'Testing Category',
         ]);
         $this->assertResponseSuccess();
@@ -82,13 +82,13 @@ class CategoriesControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \ItemManager\Controller\ItemsController::edit()
+     * @uses \ItemManager\Controller\CategoriesController::edit()
      */
     public function testEdit(): void
     {
-        $this->get('items/edit/1');
+        $this->get('categories/edit/1');
         $this->assertResponseOk();
-        $this->post('items/edit/1', [
+        $this->post('categories/edit/1', [
             'name' => 'Testing Category Edited',
         ]);
         $this->assertResponseSuccess();
@@ -102,12 +102,12 @@ class CategoriesControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \ItemManager\Controller\ItemsController::delete()
+     * @uses \ItemManager\Controller\CategoriesController::delete()
      */
     public function testDelete(): void
     {
         $count = $this->Categories->find()->all()-count();
-        $this->post('items/delete/1');
+        $this->post('categories/delete/1');
         $this->assertResponseSuccess();
         $this->assertEquals($count - 1, $this->Categories->find()->all()-count());
     }
