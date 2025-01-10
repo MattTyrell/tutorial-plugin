@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace ItemManager\Controller;
 
-use App\Controller\AppController;
-
 /**
  * Categories Controller
  *
