@@ -26,6 +26,7 @@ class CreateItems extends AbstractMigration
                 'null' => false,
                 'signed' => false,
             ])
+            ->addPrimaryKey(['id'])
             ->addColumn('item_title', 'string', [
                 'comment' => 'Item Title',
                 'default' => null,

@@ -26,6 +26,7 @@ class CreateCategories extends AbstractMigration
                 'null' => false,
                 'signed' => false,
             ])
+            ->addPrimaryKey(['id'])
             ->addColumn('name', 'string', [
                 'comment' => 'Category Name',
                 'default' => null,
