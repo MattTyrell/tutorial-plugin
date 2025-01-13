@@ -23,6 +23,7 @@
     "autoload-dev": {
         "psr-4": {
             "ItemManager\\Test\\": "tests/",
+            "ItemManager\\Test\\Fixture\\": "tests/Fixture/",
             "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
         }
     },
