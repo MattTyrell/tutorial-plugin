@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $item
+ * @var \ItemManager\Model\Entity\Item $item
  */
 ?>
 <div class="row">
@@ -22,7 +22,6 @@
                     echo $this->Form->control('is_in_stock');
                     echo $this->Form->control('item_description');
                     echo $this->Form->control('category_id');
-                    echo $this->Form->control('deleted', ['empty' => true]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

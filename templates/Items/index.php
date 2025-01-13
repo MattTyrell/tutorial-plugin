@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var iterable<\Cake\Datasource\EntityInterface> $items
+ * @var \ItemManager\Model\Entity\Item[] $items
  */
 ?>
 <div class="items index content">
@@ -17,9 +17,6 @@
                     <th><?= $this->Paginator->sort('is_in_stock') ?></th>
                     <th><?= $this->Paginator->sort('item_description') ?></th>
                     <th><?= $this->Paginator->sort('category_id') ?></th>
-                    <th><?= $this->Paginator->sort('deleted') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th><?= $this->Paginator->sort('modified') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -32,9 +29,6 @@
                     <td><?= h($item->is_in_stock) ?></td>
                     <td><?= h($item->item_description) ?></td>
                     <td><?= $this->Number->format($item->category_id) ?></td>
-                    <td><?= h($item->deleted) ?></td>
-                    <td><?= h($item->created) ?></td>
-                    <td><?= h($item->modified) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $item->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $item->id]) ?>

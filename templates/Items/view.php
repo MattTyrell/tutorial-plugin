@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $item
+ * @var \ItemManager\Model\Entity\Item $item
  */
 ?>
 <div class="row">
@@ -37,10 +37,6 @@
                 <tr>
                     <th><?= __('Category Id') ?></th>
                     <td><?= $this->Number->format($item->category_id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Deleted') ?></th>
-                    <td><?= h($item->deleted) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>
