@@ -46,17 +46,7 @@ class ItemsController extends AppController
      */
     public function add()
     {
-        $item = $this->Items->newEmptyEntity();
-        if ($this->request->is('post')) {
-            $item = $this->Items->patchEntity($item, $this->request->getData());
-            if ($this->Items->save($item)) {
-                $this->Flash->success(__('The item has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The item could not be saved. Please, try again.'));
-        }
-        $this->set(compact('item'));
+        return $this->edit();
     }
 
     /**
@@ -71,6 +61,7 @@ class ItemsController extends AppController
         $item = $this->Items->get($id, [
             'contain' => [],
         ]);
+        $categories = $this->Items->Categories->find('list')->toArray();
         if ($this->request->is(['patch', 'post', 'put'])) {
             $item = $this->Items->patchEntity($item, $this->request->getData());
             if ($this->Items->save($item)) {
@@ -80,7 +71,7 @@ class ItemsController extends AppController
             }
             $this->Flash->error(__('The item could not be saved. Please, try again.'));
         }
-        $this->set(compact('item'));
+        $this->set(compact('item', 'categories'));
     }
 
     /**
