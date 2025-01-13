@@ -76,7 +76,23 @@ class ItemsTableTest extends TestCase
      */
     public function testBuildRules(): void
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $item = $this->Items->newEntity([
+            'item_title' => 'Item 1',
+            'sale_price' => 35.5,
+            'is_in_stock' => 1,
+            'item_description' => '',
+            'category_id' => 1,
+        ]);
+        $this->assertTrue($this->Items->checkRules($item));
+
+        $item = $this->Items->newEntity([
+            'item_title' => 'Item 2',
+            'sale_price' => 35.5,
+            'is_in_stock' => 1,
+            'item_description' => '',
+            'category_id' => 0,
+        ]);
+        $this->assertFalse($this->Items->checkRules($item));
     }
 
     /**
@@ -89,7 +105,7 @@ class ItemsTableTest extends TestCase
         return [
             [
                 'data' => [
-                    'name' => 'Item 1',
+                    'item_title' => 'Item 1',
                     'sale_price' => 35.5,
                     'is_in_stock' => 1,
                     'item_description' => '',
@@ -99,16 +115,16 @@ class ItemsTableTest extends TestCase
             ],
             [
                 'data' => [
-                    'name' => '',
+                    'item_title' => '',
                     'sale_price' => 'Hello',
                     'is_in_stock' => 67,
                     'item_description' => '',
                     'category_id' => 2,
                 ],
                 'expected' => [
-                    'name' => ['_empty' => 'This field cannot be left empty'],
-                    'sale_price' => ['_empty' => 'This field cannot be left empty'],
-                    'is_in_stock' => ['_boolean' => 'This field must be a boolean value'],
+                    'item_title' => ['_empty' => 'This field cannot be left empty'],
+                    'sale_price' => ['decimal' => 'The provided value is invalid'],
+                    'is_in_stock' => ['boolean' => 'The provided value is invalid'],
                 ],
             ]
         ];
