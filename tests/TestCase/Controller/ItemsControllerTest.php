@@ -6,7 +6,6 @@ namespace ItemManager\Test\TestCase\Controller;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
-use ItemManager\Controller\ItemsController;
 
 /**
  * ItemManager\Controller\ItemsController Test Case

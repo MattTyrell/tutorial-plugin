@@ -79,7 +79,7 @@ class CreateItems extends AbstractMigration
             ])
             ->addIndex(
                 [
-                    'category_id'
+                    'category_id',
                 ],
                 [
                     'name' => 'category_id',

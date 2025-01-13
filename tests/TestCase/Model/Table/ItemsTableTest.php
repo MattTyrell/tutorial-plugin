@@ -126,7 +126,7 @@ class ItemsTableTest extends TestCase
                     'sale_price' => ['decimal' => 'The provided value is invalid'],
                     'is_in_stock' => ['boolean' => 'The provided value is invalid'],
                 ],
-            ]
+            ],
         ];
     }
 }

@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($items as $item): ?>
+                <?php foreach ($items as $item) : ?>
                 <tr>
                     <td><?= $this->Number->format($item->id) ?></td>
                     <td><?= h($item->item_title) ?></td>
