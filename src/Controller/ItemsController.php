@@ -58,9 +58,12 @@ class ItemsController extends AppController
      */
     public function edit($id = null)
     {
-        $item = $this->Items->get($id, [
-            'contain' => [],
-        ]);
+        $item = $this->Items->newEmptyEntity();
+        if ($this->request->getParam('action') === 'edit') {
+            $item = $this->Items->get($id, [
+                'contain' => [],
+            ]);
+        }
         $categories = $this->Items->Categories->find('list')->toArray();
         if ($this->request->is(['patch', 'post', 'put'])) {
             $item = $this->Items->patchEntity($item, $this->request->getData());
