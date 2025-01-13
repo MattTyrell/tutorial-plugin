@@ -44,7 +44,7 @@ class CategoriesControllerTest extends TestCase
      */
     public function testIndex(): void
     {
-        $this->get('categories/');
+        $this->get('/item-manager/categories/');
         $this->assertResponseOk();
     }
 
@@ -56,7 +56,7 @@ class CategoriesControllerTest extends TestCase
      */
     public function testView(): void
     {
-        $this->get('categories/view/1');
+        $this->get('/item-manager/categories/view/1');
         $this->assertResponseOk();
     }
 
@@ -68,14 +68,16 @@ class CategoriesControllerTest extends TestCase
      */
     public function testAdd(): void
     {
-        $count = $this->Categories->find()->all()-count();
-        $this->get('categories/add');
+        $count = count($this->Categories->find()->all()->toArray());
+        $this->get('/item-manager/categories/add');
         $this->assertResponseOk();
-        $this->post('categories/add', [
+        $this->enableCsrfToken();
+        $this->enableSecurityToken();
+        $this->post('/item-manager/categories/add', [
             'name' => 'Testing Category',
         ]);
         $this->assertResponseSuccess();
-        $this->assertEquals($count + 1, $this->Categories->find()->all()-count());
+        $this->assertEquals($count + 1, count($this->Categories->find()->toArray()));
     }
 
     /**
@@ -86,9 +88,11 @@ class CategoriesControllerTest extends TestCase
      */
     public function testEdit(): void
     {
-        $this->get('categories/edit/1');
+        $this->get('/item-manager/categories/edit/1');
         $this->assertResponseOk();
-        $this->post('categories/edit/1', [
+        $this->enableCsrfToken();
+        $this->enableSecurityToken();
+        $this->post('/item-manager/categories/edit/1', [
             'name' => 'Testing Category Edited',
         ]);
         $this->assertResponseSuccess();
@@ -106,9 +110,11 @@ class CategoriesControllerTest extends TestCase
      */
     public function testDelete(): void
     {
-        $count = $this->Categories->find()->all()-count();
-        $this->post('categories/delete/1');
+        $count = count($this->Categories->find()->toArray());
+        $this->enableCsrfToken();
+        $this->enableSecurityToken();
+        $this->post('/item-manager/categories/delete/1');
         $this->assertResponseSuccess();
-        $this->assertEquals($count - 1, $this->Categories->find()->all()-count());
+        $this->assertEquals($count - 1, count($this->Categories->find()->toArray()));
     }
 }
