@@ -44,7 +44,7 @@ class ItemsControllerTest extends TestCase
      */
     public function testIndex(): void
     {
-        $this->get('items/');
+        $this->get('/item-manager/items/');
         $this->assertResponseOk();
     }
 
@@ -56,7 +56,7 @@ class ItemsControllerTest extends TestCase
      */
     public function testView(): void
     {
-        $this->get('items/view/1');
+        $this->get('/item-manager/items/view/1');
         $this->assertResponseOk();
     }
 
@@ -68,14 +68,20 @@ class ItemsControllerTest extends TestCase
      */
     public function testAdd(): void
     {
-        $count = $this->Items->find()->all()-count();
-        $this->get('items/add');
+        $count = count($this->Items->find()->toArray());
+        $this->get('/item-manager/items/add');
         $this->assertResponseOk();
-        $this->post('items/add', [
-            'name' => 'Testing Category',
+        $this->enableCsrfToken();
+        $this->enableSecurityToken();
+        $this->post('/item-manager/items/add', [
+            'item_title' => 'Testing Item',
+            'sale_price' => 25.6,
+            'is_in_stock' => 1,
+            'item_description' => 'Testing item description',
+            'category_id' => 1,
         ]);
         $this->assertResponseSuccess();
-        $this->assertEquals($count + 1, $this->Items->find()->all()-count());
+        $this->assertEquals($count + 1, count($this->Items->find()->toArray()));
     }
 
     /**
@@ -86,16 +92,18 @@ class ItemsControllerTest extends TestCase
      */
     public function testEdit(): void
     {
-        $this->get('items/edit/1');
+        $this->get('/item-manager/items/edit/1');
         $this->assertResponseOk();
-        $this->post('items/edit/1', [
-            'name' => 'Testing Category Edited',
+        $this->enableCsrfToken();
+        $this->enableSecurityToken();
+        $this->post('/item-manager/items/edit/1', [
+            'item_title' => 'Testing Item Edited',
         ]);
         $this->assertResponseSuccess();
 
-        /** @var \ItemManager\Model\Entity\Category $category */
-        $category = $this->Items->get(1);
-        $this->assertEquals('Testing Category Edited', $category->name);
+        /** @var \ItemManager\Model\Entity\Item $item */
+        $item = $this->Items->get(1);
+        $this->assertEquals('Testing Item Edited', $item->item_title);
     }
 
     /**
@@ -106,9 +114,11 @@ class ItemsControllerTest extends TestCase
      */
     public function testDelete(): void
     {
-        $count = $this->Items->find()->all()-count();
-        $this->post('items/delete/1');
+        $count = count($this->Items->find()->toArray());
+        $this->enableCsrfToken();
+        $this->enableSecurityToken();
+        $this->post('/item-manager/items/delete/1');
         $this->assertResponseSuccess();
-        $this->assertEquals($count - 1, $this->Items->find()->all()-count());
+        $this->assertEquals($count - 1, count($this->Items->find()->toArray()));
     }
 }
