@@ -6,6 +6,15 @@
 ?>
 <div class="categories index content">
     <?= $this->Html->link(__('New Category'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <?= $this->Html->link(__('List Items'),
+        [
+            'controller' => 'Items',
+            'action' => 'index',
+        ],
+        [
+            'class' => 'button float-right',
+        ],
+    ) ?>
     <h3><?= __('Categories') ?></h3>
     <div class="table-responsive">
         <table>
