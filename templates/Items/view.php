@@ -19,20 +19,24 @@
             <h3><?= h($item->item_title) ?></h3>
             <table>
                 <tr>
+                    <th><?= __('ID') ?></th>
+                    <td><?= $this->Number->format($item->id) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Item Title') ?></th>
                     <td><?= h($item->item_title) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Item Description') ?></th>
-                    <td><?= h($item->item_description) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($item->id) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Sale Price') ?></th>
                     <td><?= $this->Number->format($item->sale_price) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Is In Stock') ?></th>
+                    <td><?= $item->is_in_stock ? __('Yes') : __('No'); ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Item Description') ?></th>
+                    <td><?= h($item->item_description) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Category Id') ?></th>
@@ -45,10 +49,6 @@
                 <tr>
                     <th><?= __('Modified') ?></th>
                     <td><?= h($item->modified) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Is In Stock') ?></th>
-                    <td><?= $item->is_in_stock ? __('Yes') : __('No'); ?></td>
                 </tr>
             </table>
         </div>
