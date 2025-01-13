@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \ItemManager\Model\Entity\Item $item
+ * @var \ItemManager\Model\Entity\Category $categories
  */
 ?>
 <div class="row">
@@ -26,7 +27,10 @@
                     echo $this->Form->control('sale_price');
                     echo $this->Form->control('is_in_stock');
                     echo $this->Form->control('item_description');
-                    echo $this->Form->control('category_id');
+                    echo $this->Form->control('category_id', [
+                            'options' => $categories,
+                            'label' => 'Category',
+                    ]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
