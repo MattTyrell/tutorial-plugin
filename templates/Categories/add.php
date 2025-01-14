@@ -16,9 +16,7 @@
             <?= $this->Form->create($category) ?>
             <fieldset>
                 <legend><?= __('Add Category') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                ?>
+                    <?= $this->Form->control('name'); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>

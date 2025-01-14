@@ -22,16 +22,18 @@
             <?= $this->Form->create($item) ?>
             <fieldset>
                 <legend><?= __('Edit Item') ?></legend>
-                <?php
-                    echo $this->Form->control('item_title');
-                    echo $this->Form->control('sale_price');
-                    echo $this->Form->control('is_in_stock');
-                    echo $this->Form->control('item_description');
-                    echo $this->Form->control('category_id', [
-                            'options' => $categories,
-                            'label' => 'Category',
-                    ]);
-                ?>
+                    <?= $this->Form->control('item_title'); ?>
+                    <?= $this->Form->control('sale_price'); ?>
+                    <?= $this->Form->control('is_in_stock'); ?>
+                    <?= $this->Form->control('item_description'); ?>
+                    <?= $this->Form->control(
+                            'category_id',
+                            [
+                                'options' => $categories,
+                                'label' => 'Category',
+                            ]
+                        );
+                    ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>

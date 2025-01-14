@@ -16,13 +16,11 @@
             <?= $this->Form->create($item) ?>
             <fieldset>
                 <legend><?= __('Add Item') ?></legend>
-                <?php
-                    echo $this->Form->control('item_title');
-                    echo $this->Form->control('sale_price');
-                    echo $this->Form->control('is_in_stock');
-                    echo $this->Form->control('item_description');
-                    echo $this->Form->control('category_id');
-                ?>
+                    <?= $this->Form->control('item_title'); ?>
+                    <?= $this->Form->control('sale_price'); ?>
+                    <?= $this->Form->control('is_in_stock'); ?>
+                    <?= $this->Form->control('item_description'); ?>
+                    <?= $this->Form->control('category_id'); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
