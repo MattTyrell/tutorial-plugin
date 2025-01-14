@@ -113,11 +113,22 @@ class ItemsControllerTest extends TestCase
      */
     public function testDelete(): void
     {
-        $count = count($this->Items->find()->toArray());
+        $count = count(
+            $this->Items
+                ->find()
+                ->where(['deleted IS' => null])
+                ->toArray()
+        );
         $this->enableCsrfToken();
         $this->enableSecurityToken();
         $this->post('/item-manager/items/delete/1');
         $this->assertResponseSuccess();
-        $this->assertEquals($count - 1, count($this->Items->find()->toArray()));
+        $afterDeleteCount = count(
+            $this->Items
+                ->find()
+                ->where(['deleted IS' => null])
+                ->toArray()
+        );
+        $this->assertEquals($count - 1, $afterDeleteCount);
     }
 }

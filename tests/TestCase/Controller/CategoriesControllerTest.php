@@ -109,11 +109,22 @@ class CategoriesControllerTest extends TestCase
      */
     public function testDelete(): void
     {
-        $count = count($this->Categories->find()->toArray());
+        $count = count(
+            $this->Categories
+                ->find()
+                ->where(['deleted IS' => null])
+                ->toArray()
+        );
         $this->enableCsrfToken();
         $this->enableSecurityToken();
         $this->post('/item-manager/categories/delete/1');
         $this->assertResponseSuccess();
-        $this->assertEquals($count - 1, count($this->Categories->find()->toArray()));
+        $afterDeleteCount = count(
+            $this->Categories
+                ->find()
+                ->where(['deleted IS' => null])
+                ->toArray()
+        );
+        $this->assertEquals($count - 1, $afterDeleteCount);
     }
 }
