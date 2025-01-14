@@ -14,8 +14,4 @@
 
 # JetBrains IDEs
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-.idea
-.idea/tutorial-plugin.iml
-!.idea/dataSources.xml
-!.idea/php.xml
-!.idea/sqldialects.xml
+.idea/*
