@@ -26,14 +26,10 @@
                     <?= $this->Form->control('sale_price'); ?>
                     <?= $this->Form->control('is_in_stock'); ?>
                     <?= $this->Form->control('item_description'); ?>
-                    <?= $this->Form->control(
-                            'category_id',
-                            [
-                                'options' => $categories,
-                                'label' => 'Category',
-                            ]
-                        );
-                    ?>
+                    <?= $this->Form->control('category_id', [
+                        'options' => $categories,
+                        'label' => 'Category',
+                    ]); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
