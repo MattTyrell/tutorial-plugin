@@ -28,6 +28,7 @@ use Cake\Validation\Validator;
  * @method \ItemManager\Model\Entity\Item[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @mixin \Muffin\Trash\Model\Behavior\TrashBehavior
  */
 class ItemsTable extends Table
 {
@@ -46,6 +47,7 @@ class ItemsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Muffin/Trash.Trash');
 
         $this->belongsTo('Categories', [
             'foreignKey' => 'category_id',
