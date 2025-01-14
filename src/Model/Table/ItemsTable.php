@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace ItemManager\Model\Table;
 
-use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -12,7 +11,6 @@ use Cake\Validation\Validator;
  * Items Model
  *
  * @property \ItemManager\Model\Table\CategoriesTable&\Cake\ORM\Association\BelongsTo $Categories
- *
  * @method \ItemManager\Model\Entity\Item newEmptyEntity()
  * @method \ItemManager\Model\Entity\Item newEntity(array $data, array $options = [])
  * @method \ItemManager\Model\Entity\Item[] newEntities(array $data, array $options = [])
@@ -26,7 +24,6 @@ use Cake\Validation\Validator;
  * @method \ItemManager\Model\Entity\Item[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
  * @method \ItemManager\Model\Entity\Item[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
  * @method \ItemManager\Model\Entity\Item[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
- *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  * @mixin \Muffin\Trash\Model\Behavior\TrashBehavior
  */
