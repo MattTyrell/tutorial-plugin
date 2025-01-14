@@ -44,6 +44,15 @@ class ItemManagerPlugin extends BasePlugin
             ['path' => '/item-manager'],
             function (RouteBuilder $builder) {
                 // Add custom routes here
+                $builder->get('/items', ['controller' => 'Items', 'action' => 'index']);
+                $builder->get('/items/{id}', ['controller' => 'Items', 'action' => 'view'])
+                    ->setPatterns(['id' => '\d+'])
+                    ->setPass(['id']);
+
+                $builder->get('/categories', ['controller' => 'Categories', 'action' => 'index']);
+                $builder->get('/categories/{id}', ['controller' => 'Categories', 'action' => 'view'])
+                    ->setPatterns(['id' => '\d+'])
+                    ->setPass(['id']);
 
                 $builder->fallbacks();
             }
