@@ -9,8 +9,9 @@
 *.iml
 !.gitkeep
 
-/vendor/*
 /composer.lock
+/config/Migrations/schema-dump-default.lock
+/vendor/*
 /.phpunit.result.cache
 
 # JetBrains IDEs
