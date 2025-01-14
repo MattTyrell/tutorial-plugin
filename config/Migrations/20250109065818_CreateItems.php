@@ -89,6 +89,6 @@ class CreateItems extends AbstractMigration
      */
     public function down()
     {
-        $this->table('pages')->drop()->save();
+        $this->table('items')->drop()->save();
     }
 }
