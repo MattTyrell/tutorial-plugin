@@ -10,8 +10,6 @@ use Cake\TestSuite\Fixture\TestFixture;
  */
 class ItemsFixture extends TestFixture
 {
-    public $import = ['table' => 'items'];
-
     /**
      * Init method
      *
