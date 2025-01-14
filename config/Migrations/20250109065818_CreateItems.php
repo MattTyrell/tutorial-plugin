@@ -5,8 +5,6 @@ use Migrations\AbstractMigration;
 
 class CreateItems extends AbstractMigration
 {
-    public $autoId = false;
-
     /**
      * Up Method.
      *
@@ -18,15 +16,6 @@ class CreateItems extends AbstractMigration
     public function up(): void
     {
         $table = $this->table('items')
-            ->addColumn('id', 'biginteger', [
-                'autoIncrement' => true,
-                'comment' => 'ID',
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-                'signed' => false,
-            ])
-            ->addPrimaryKey(['id'])
             ->addColumn('item_title', 'string', [
                 'comment' => 'Item Title',
                 'default' => null,

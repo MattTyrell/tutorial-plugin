@@ -5,8 +5,6 @@ use Migrations\AbstractMigration;
 
 class CreateCategories extends AbstractMigration
 {
-    public $autoId = false;
-
     /**
      * Up Method.
      *
@@ -18,15 +16,6 @@ class CreateCategories extends AbstractMigration
     public function up(): void
     {
         $table = $this->table('categories')
-            ->addColumn('id', 'biginteger', [
-                'autoIncrement' => true,
-                'comment' => 'ID',
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-                'signed' => false,
-            ])
-            ->addPrimaryKey(['id'])
             ->addColumn('name', 'string', [
                 'comment' => 'Category Name',
                 'default' => null,
