@@ -16,7 +16,8 @@ class CreateCategories extends AbstractMigration
      */
     public function up(): void
     {
-        $isSqlite = $this->getAdapter()->getOption('name') === 'sqlite';
+        $connection = $this->getAdapter()->getConnection();
+        $isSqlite = $connection->getAttribute(PDO::ATTR_DRIVER_NAME) === 'sqlite';
         $table = $this->table('categories')
             ->addColumn('id', $isSqlite ? 'integer' : 'biginteger', [
                 'autoIncrement' => true,
