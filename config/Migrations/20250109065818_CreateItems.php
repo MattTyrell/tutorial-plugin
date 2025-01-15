@@ -16,8 +16,7 @@ class CreateItems extends AbstractMigration
      */
     public function up(): void
     {
-        $connection = $this->getAdapter()->getConnection();
-        $isSqlite = $connection->getAttribute(PDO::ATTR_DRIVER_NAME) === 'sqlite';
+        $isSqlite = $this->getAdapter()->getOption('adapter') === 'sqlite';
         $table = $this->table('items')
             ->addColumn('id', $isSqlite ? 'integer' : 'biginteger', [
                 'autoIncrement' => true,
