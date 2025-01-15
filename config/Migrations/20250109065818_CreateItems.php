@@ -5,6 +5,7 @@ use Migrations\AbstractMigration;
 
 class CreateItems extends AbstractMigration
 {
+    public $autoId = false;
     /**
      * Up Method.
      *
@@ -15,7 +16,17 @@ class CreateItems extends AbstractMigration
      */
     public function up(): void
     {
+        $isSqlite = $this->getAdapter()->getOption('name') === 'sqlite';
         $table = $this->table('items')
+            ->addColumn('id', $isSqlite ? 'integer' : 'biginteger', [
+                'autoIncrement' => true,
+                'comment' => 'Item ID',
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+                'signed' => false,
+            ])
+            ->addPrimaryKey(['id'])
             ->addColumn('item_title', 'string', [
                 'comment' => 'Item Title',
                 'default' => null,
