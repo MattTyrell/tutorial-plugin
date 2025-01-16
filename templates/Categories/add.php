@@ -15,11 +15,11 @@
         <div class="categories form content">
             <?= $this->Form->create($category); ?>
             <fieldset>
-                <legend><?= __('Add Category') ?></legend>
+                <legend><?= __('Add Category'); ?></legend>
                     <?= $this->Form->control('name'); ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+            <?= $this->Form->button(__('Submit')); ?>
+            <?= $this->Form->end(); ?>
         </div>
     </div>
 </div>
