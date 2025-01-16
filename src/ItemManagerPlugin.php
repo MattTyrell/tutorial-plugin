@@ -47,9 +47,23 @@ class ItemManagerPlugin extends BasePlugin
                 $builder->connect('/items/{id}', ['controller' => 'Items', 'action' => 'view'])
                     ->setPatterns(['id' => '\d+'])
                     ->setPass(['id']);
+                $builder->connect('/items/add', ['controller' => 'Items', 'action' => 'add']);
+                $builder->connect('/items/edit/{id}', ['controller' => 'Items', 'action' => 'edit'])
+                    ->setPatterns(['id' => '\d+'])
+                    ->setPass(['id']);
+                $builder->connect('/items/delete/{id}', ['controller' => 'Items', 'action' => 'delete'])
+                    ->setPatterns(['id' => '\d+'])
+                    ->setPass(['id']);
 
                 $builder->connect('/categories', ['controller' => 'Categories', 'action' => 'index']);
                 $builder->connect('/categories/{id}', ['controller' => 'Categories', 'action' => 'view'])
+                    ->setPatterns(['id' => '\d+'])
+                    ->setPass(['id']);
+                $builder->connect('/categories/add', ['controller' => 'Categories', 'action' => 'add']);
+                $builder->connect('/categories/edit/{id}', ['controller' => 'Categories', 'action' => 'edit'])
+                    ->setPatterns(['id' => '\d+'])
+                    ->setPass(['id']);
+                $builder->connect('/categories/delete/{id}', ['controller' => 'Categories', 'action' => 'delete'])
                     ->setPatterns(['id' => '\d+'])
                     ->setPass(['id']);
 
