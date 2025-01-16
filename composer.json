@@ -1,0 +1,35 @@
+{
+    "name": "matthewtan/item-manager",
+    "description": "ItemManager plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "cakephp/cakephp": "^4.5.0",
+        "cakephp/migrations": "^3.7",
+        "muffin/trash": "^3.1"
+    },
+    "require-dev": {
+        "cakephp/bake": "^2.8",
+        "cakephp/cakephp-codesniffer": "^4.5",
+        "phpstan/phpstan": "^1.11",
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "ItemManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ItemManager\\Test\\": "tests/",
+            "ItemManager\\Test\\Fixture\\": "tests/Fixture/",
+            "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
