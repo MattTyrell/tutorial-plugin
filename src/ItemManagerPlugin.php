@@ -43,25 +43,15 @@ class ItemManagerPlugin extends BasePlugin
             'ItemManager',
             ['path' => '/item-manager'],
             function (RouteBuilder $builder) {
-                $builder->get('/items', ['controller' => 'Items', 'action' => 'index']);
-                $builder->get('/items/{id}', ['controller' => 'Items', 'action' => 'view'])
+                $builder->connect('/items', ['controller' => 'Items', 'action' => 'index']);
+                $builder->connect('/items/{id}', ['controller' => 'Items', 'action' => 'view'])
                     ->setPatterns(['id' => '\d+'])
                     ->setPass(['id']);
-                $builder->post('/items', ['controller' => 'Items', 'action' => 'add']);
-                $builder->put('/items/{id}', ['controller' => 'Items', 'action' => 'edit'])
-                    ->setPatterns(['id' => '\d+'])
-                    ->setPass(['id']);
-                $builder->delete('/items/{id}', ['controller' => 'Items', 'action' => 'delete']);
 
-                $builder->get('/categories', ['controller' => 'Categories', 'action' => 'index']);
-                $builder->get('/categories/{id}', ['controller' => 'Categories', 'action' => 'view'])
+                $builder->connect('/categories', ['controller' => 'Categories', 'action' => 'index']);
+                $builder->connect('/categories/{id}', ['controller' => 'Categories', 'action' => 'view'])
                     ->setPatterns(['id' => '\d+'])
                     ->setPass(['id']);
-                $builder->post('/categories', ['controller' => 'Categories', 'action' => 'add']);
-                $builder->put('/categories/{id}', ['controller' => 'Categories', 'action' => 'edit'])
-                    ->setPatterns(['id' => '\d+'])
-                    ->setPass(['id']);
-                $builder->delete('/categories/{id}', ['controller' => 'Categories', 'action' => 'delete']);
 
                 $builder->fallbacks();
             }
