@@ -6,6 +6,7 @@ use Migrations\AbstractMigration;
 class CreateCategories extends AbstractMigration
 {
     public $autoId = false;
+
     /**
      * Up Method.
      *
