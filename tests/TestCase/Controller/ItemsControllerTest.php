@@ -67,7 +67,7 @@ class ItemsControllerTest extends TestCase
      */
     public function testAdd(): void
     {
-        $count = count($this->Items->find()->toArray());
+        $count = $this->Items->find()->all()->count();
         $this->get('/item-manager/items/add');
         $this->assertResponseOk();
         $this->enableCsrfToken();
@@ -80,7 +80,7 @@ class ItemsControllerTest extends TestCase
             'category_id' => 1,
         ]);
         $this->assertResponseSuccess();
-        $this->assertEquals($count + 1, count($this->Items->find()->toArray()));
+        $this->assertEquals($count + 1, $this->Items->find()->all()->count());
     }
 
     /**
@@ -111,24 +111,20 @@ class ItemsControllerTest extends TestCase
      * @return void
      * @uses \ItemManager\Controller\ItemsController::delete()
      */
+    /**
+     * Test delete method
+     *
+     * @return void
+     * @uses \ItemManager\Controller\ItemsController::delete()
+     */
     public function testDelete(): void
     {
-        $count = count(
-            $this->Items
-                ->find()
-                ->where(['deleted IS' => null])
-                ->toArray()
-        );
+        $count = $this->Items->find()->where(['deleted IS' => null])->all()->count();
         $this->enableCsrfToken();
         $this->enableSecurityToken();
         $this->post('/item-manager/items/delete/1');
         $this->assertResponseSuccess();
-        $afterDeleteCount = count(
-            $this->Items
-                ->find()
-                ->where(['deleted IS' => null])
-                ->toArray()
-        );
+        $afterDeleteCount = $this->Items->find()->where(['deleted IS' => null])->all()->count();
         $this->assertEquals($count - 1, $afterDeleteCount);
     }
 }
