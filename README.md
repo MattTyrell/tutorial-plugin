@@ -64,7 +64,7 @@ Add the following in `phpunit.xml.dist` (within the `<testsuites>` tags) so that
 <!-- More code below -->
 ```
 
-Go to `app/tests/bootstrap.php` and add the following at the bottom of the file, replacing `(new Migrator())->run();`:
+If your application does not have a test database connection defined, go to `app/tests/bootstrap.php` and add the following at the bottom of the file, replacing `(new Migrator())->run();`:
 ```php
 (new Migrator())->runMany([
     ['connection' => 'test'],
