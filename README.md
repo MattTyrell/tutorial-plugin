@@ -59,25 +59,12 @@ composer update matthewtan/item-manager
 ```
 
 ## Usage
-Once everything has been setup and installed, ensure that you can visit the following URL:
+### Categories Management
 
-`http://<HOST>/item-manager/<CONTROLLER>/<ACTION>/<ID>`
+List page URL path: /item-manager/categories
+Available actions: Add, Edit, Delete
 
-Replace `<HOST>` with your web server host.
+### Items Management
 
-The following is a list of the controllers, actions, and whether an ID is needed to view the page:
-
-Replace `<CONTROLLER>`, `<ACTION>`, and `<ID>` in the URL with the following values:
-
-| Controller | Action | Needs ID? |
-|------------|--------|-----------|
-| Items      | index  | No        |
-| Items      | view   | Yes       |
-| Items      | add    | No        |
-| Items      | edit   | Yes       |
-| Items      | delete | Yes       |
-| Categories | index  | No        |
-| Categories | view   | Yes       |
-| Categories | add    | No        |
-| Categories | edit   | Yes       |
-| Categories | delete | Yes       |
+List page URL path: /item-manager/items
+Available actions: Add, Edit, Delete
