@@ -61,10 +61,12 @@ composer update matthewtan/item-manager
 ## Usage
 ### Categories Management
 
-List page URL path: /item-manager/categories
+List page URL path: `/item-manager/categories`
+
 Available actions: Add, Edit, Delete
 
 ### Items Management
 
-List page URL path: /item-manager/items
+List page URL path: `/item-manager/items`
+
 Available actions: Add, Edit, Delete
