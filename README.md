@@ -55,7 +55,7 @@ http://<HOST>/item-manager/items
 
 Before running the unit tests for the plugins in the tutorials CakePHP application, some additional configurations are needed.
 
-Add the following in `phpunit.xml.dist` (within the `<testsuites>` tags so that PHPUnit will run the test cases in the ItemManager vendor directory:
+Add the following in `phpunit.xml.dist` (within the `<testsuites>` tags) so that PHPUnit will run the test cases in the ItemManager vendor directory:
 ```xml
 <!-- Add plugin test suites here -->
 <testsuite name="ItemManager">
@@ -72,7 +72,7 @@ Go to `app/tests/bootstrap.php` and add the following at the bottom of the file,
 ]);
 ```
 
-Add the following in the composer.json's autoload-dev object
+If your application's `autoload-dev` settings have not been configured for the plugin tests, add the following in `composer.json`.
 ```json
 "autoload-dev": {
     "psr-4": {
