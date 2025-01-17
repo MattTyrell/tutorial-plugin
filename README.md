@@ -15,6 +15,8 @@ The ItemManager plugin offers basic CRUD operations and includes the following:
 3. Controllers for 'Items' and 'Categories'.
 4. Template view files for 'Items' and 'Categories' for each of the CRUD operations (index, view, add, edit, delete).
 
+**This plugin supports CakePHP version 4.5.x only.**
+
 ## Installation
 
 Note: This is to be done in your CakePHP application.
