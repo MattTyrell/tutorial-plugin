@@ -74,9 +74,8 @@ Add the following in the composer.json's autoload-dev object
 ```json
 "autoload-dev": {
     "psr-4": {
-        "App\\Test\\": "tests/",
         "ItemManager\\Test\\": "vendor/matthewtan/item-manager/tests/",
-        "ItemManager\\Test\\Fixture": "vendor/matthewtan/item-manager/tests/Fixture/"
+        "ItemManager\\Test\\Fixture\\": "vendor/matthewtan/item-manager/tests/Fixture/"
     }
 }
 ```
