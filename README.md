@@ -82,7 +82,7 @@ Add the following in the composer.json's autoload-dev object
 
 Dumpautoload via composer to refresh:
 ```bash
-docker compose exec php-app composer dumpautoload
+composer dumpautoload
 ```
 
 Now you can run the plugin unit tests in the CakePHP application:
